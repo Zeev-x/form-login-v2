@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    h1 {
+      color: #f87232;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    .form-group input {
+      width: calc(100% - 20px);
+      padding: 10px 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    input[type="submit"] {
+      background-color: #f87232;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 1px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #f5631d;
+    }
+    .to-register {
+      font-size: 10px;
+      margin-top: 10px;
+    }
+    .to-register a {
+      color: #f87232;
+      text-decoration: none;
+    }
+    .to-register a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login Cok</h1>
+    <form action="/login" method="post">
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Password">
+      </div>
+      <input type="submit" value="Login">
+      <div class="to-register">
+        Don't have an account? <a href="/register">Register here</a>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Ambil parameter query dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+      alert(error);
+    }
+  </script>
+</body>
+</html>
